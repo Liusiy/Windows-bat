@@ -1,0 +1,23 @@
+#"bat脚本处理时会忽略本文档中以"#"开头的行.
+#update-de.exe使用update-de.bat制作.
+#SOURCE_LIST: 新开发环境的来源(环境为压缩文件).
+#MOUNT_VOLUME: 如果SOURCE_LIST为网络上其它主机的共享路径,需要映射网络驱动器.
+#DE_DST_PATH: 解压目的路径.
+#KEEP_DIR: 旧环境中不清除的目录,不同目录名以空格隔开.(此脚本不会清除隐藏的目录和文件.)
+#STATIC_FILE_PATH: mydir.def/*bat的存放路径.
+#UPZIP_CMD: 解压命令,其引用格式为: %UPZIP_CMD% [src_rar_path] [dst_path].
+
+SOURCE_LIST=\\192.168.25.15\build-archive\DE
+MOUNT_VOLUME=Z:
+DE_DST_PATH=D:\1De-En\
+KEEP_DIR=sys ssp 
+STATIC_FILE_PATH=E:\liusiy_share\Script\set_environment\
+UNZIP_CMD=rar x -o- -idq
+
+#举例:更新1010F环境
+#1.dos界面输入1010F,此时会自动生成一些路径;
+#新环境rar文件路径: \\192.168.25.15\build-archive\DE\SWITCH_OLT_1010F
+#新环境解压完成后的路径: D:\1De-En\SWITCH_OLT_1010F
+#一些本地保存的脚本文件的路径: E:\liusiy_share\Script\set_environment\SWITCH_OLT_1010F
+#2.dos界面输入期望更新的环境版本号;
+#3.开始更新环境...
